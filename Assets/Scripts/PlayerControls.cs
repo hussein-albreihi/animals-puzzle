@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
+    public Rigidbody2D m_player;
+
     [Header("Sprite settings")]
     public SpriteRenderer m_sprite;
     
@@ -24,6 +27,10 @@ public class PlayerControls : MonoBehaviour
         if (m_sprite == null) {
             m_sprite = GetComponent<SpriteRenderer>();
         }
+
+        if (m_player == null) {
+            m_player = GetComponent<Rigidbody2D>();
+        }
     }
 
     // Update is called once per frame
@@ -37,10 +44,13 @@ public class PlayerControls : MonoBehaviour
     private void MovePlayer() {
         if (Input.GetMouseButton(0) && m_isJumping) {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 playerPos = new(transform.position.x, transform.position.y, 0f);
-            Vector3 newPos = new(mousePosition.x, mousePosition.y, 0);
-            Vector3 moveTowards = Vector3.Lerp(playerPos, newPos, 0.3f);
-            transform.position = moveTowards;
+            Vector3 velocity = mousePosition * 14.5f * Time.fixedDeltaTime;
+            m_player.velocity = velocity;
+            // transform.position = moveTowards;
+        }
+
+        if (!Input.GetMouseButton(0)) {
+            m_player.velocity = Vector2.zero;
         }
     }
 
