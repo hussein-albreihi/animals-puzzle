@@ -1,11 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
+    [Header ("Game settings")]
     public Rigidbody2D m_player;
+    public GameManager m_manager;
+    public LayerMask m_whatIsCollideable;
 
     [Header("Sprite settings")]
     public SpriteRenderer m_sprite;
@@ -17,6 +21,7 @@ public class PlayerControls : MonoBehaviour
     [Header("Jump settings")]
     public float m_jumpHeight = 0f;
     public float m_jumpDelay = 0.15f;
+    public float m_speed = 1.3f;
 
     private bool m_isJumping = false;
     private float m_jumpDelayTimer = 0f;
@@ -31,6 +36,10 @@ public class PlayerControls : MonoBehaviour
         if (m_player == null) {
             m_player = GetComponent<Rigidbody2D>();
         }
+
+        if (m_manager == null) {
+            m_manager = FindObjectOfType<GameManager>();
+        }
     }
 
     // Update is called once per frame
@@ -39,14 +48,17 @@ public class PlayerControls : MonoBehaviour
         m_jumpDelayTimer += Time.deltaTime;
         Jump(0.3f, 0.0f);
         MovePlayer();
+        CheckCollision();
     }
 
     private void MovePlayer() {
         if (Input.GetMouseButton(0) && m_isJumping) {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 velocity = mousePosition * 14.5f * Time.fixedDeltaTime;
-            m_player.velocity = velocity;
-            // transform.position = moveTowards;
+            Vector2 heading = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            float distance = heading.magnitude;
+            Vector2 direction = heading / distance; // This is now the normalized direction.
+
+            // Vector3 velocity = mousePosition * 14.5f * Time.fixedDeltaTime;
+            m_player.velocity = direction * m_speed;
         }
 
         if (!Input.GetMouseButton(0)) {
@@ -82,5 +94,19 @@ public class PlayerControls : MonoBehaviour
         m_isJumping = false;
         m_jumpDelayTimer = 0f;
         m_sprite.transform.localScale = Vector3.one;
+    }
+    
+    private void CheckCollision() {
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 0.2f, Vector2.zero);
+        foreach (RaycastHit2D hit in hits) {
+            if (hit.rigidbody.name.Contains("pickup")) {
+                m_manager.PickUpFruit();
+                Destroy(hit.rigidbody.gameObject);
+            }
+        }
+    }
+
+    public void PlayerHit() {
+        Debug.LogError("Player hit logic not implemented");
     }
 }
