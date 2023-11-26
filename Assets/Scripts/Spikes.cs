@@ -21,7 +21,6 @@ public class Spikes : MonoBehaviour
 
     private SpriteRenderer m_renderer;
     private bool m_spikesActive = false;
-    private readonly string PLAYER_TAG = "Player";
 
     private float m_spikesTimer = 0f;
 
@@ -68,11 +67,10 @@ public class Spikes : MonoBehaviour
 
     private void CheckCollision() {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, m_raycastRadius, Vector2.zero, m_whatIsPlayer);
-        Debug.Log("hits length: " + hits.Length);
 
         if (hits.Length > 0) {
             foreach (RaycastHit2D hit in hits) {
-                if (hit.rigidbody.tag == PLAYER_TAG && m_spikesActive) {
+                if (hit.rigidbody.tag == GlobalVariables.Tags.PLAYER && m_spikesActive) {
                     m_player.PlayerHit();
                 }
             } 

@@ -99,7 +99,7 @@ public class PlayerControls : MonoBehaviour
     private void CheckCollision() {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 0.2f, Vector2.zero);
         foreach (RaycastHit2D hit in hits) {
-            if (hit.rigidbody.name.Contains("pickup")) {
+            if (hit.rigidbody.tag == GlobalVariables.Tags.PICKUP) {
                 m_manager.PickUpFruit();
                 Destroy(hit.rigidbody.gameObject);
             }
