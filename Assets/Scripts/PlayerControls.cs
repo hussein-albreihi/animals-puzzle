@@ -57,7 +57,6 @@ public class PlayerControls : MonoBehaviour
             float distance = heading.magnitude;
             Vector2 direction = heading / distance; // This is now the normalized direction.
 
-            // Vector3 velocity = mousePosition * 14.5f * Time.fixedDeltaTime;
             m_player.velocity = direction * m_speed;
         }
 

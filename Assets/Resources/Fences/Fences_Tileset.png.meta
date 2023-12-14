@@ -134,7 +134,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Fences_Tileset_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 408
+        width: 24
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35a932a157b649cd956a466f9e83f76
+      internalID: 1652671757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_Tileset_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 408
+        width: 332
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec363824b2bd41f69e0176c385908f5
+      internalID: -170038127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_Tileset_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 280
+        width: 77
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b092b6e86ba944dc29c7b46864c0321f
+      internalID: -1036641587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_Tileset_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 256
+        width: 77
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34934a4ba13f64ec98b218d147db3460
+      internalID: 1682812900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 256
+        width: 77
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85aa6415e4c244812abb7c03876be6fa
+      internalID: 1751304980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_Tileset_5
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 256
+        width: 24
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c55d1f17a81364df98ca85b67135a6ca
+      internalID: 1675573420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_Tileset_6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 128
+        width: 24
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0729d5cf28b4e4ee8a563be2089fde8a
+      internalID: 1122818362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_Tileset_7
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 128
+        width: 77
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078172c45917941e29b33e7ff502176c
+      internalID: -1356372344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_Tileset_8
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 128
+        width: 257
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33f5ed78e3154c26b4f7a181ebd8f1e
+      internalID: 759110517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_Tileset_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 76
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b31459f3c7249769c7a230d962c282
+      internalID: -2055475667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_Tileset_10
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 24
+        width: 77
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89eeabced4a9a4ebfa9a74db17790711
+      internalID: 507674551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_Tileset_11
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 0
+        width: 77
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97b3c5cbcccb40e6ac884e00ec2bc26
+      internalID: 1049157030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +397,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Fences_Tileset_0: 1652671757
+      Fences_Tileset_1: -170038127
+      Fences_Tileset_10: 507674551
+      Fences_Tileset_11: 1049157030
+      Fences_Tileset_2: -1036641587
+      Fences_Tileset_3: 1682812900
+      Fences_Tileset_4: 1751304980
+      Fences_Tileset_5: 1675573420
+      Fences_Tileset_6: 1122818362
+      Fences_Tileset_7: -1356372344
+      Fences_Tileset_8: 759110517
+      Fences_Tileset_9: -2055475667
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

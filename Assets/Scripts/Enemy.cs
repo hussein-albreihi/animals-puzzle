@@ -46,9 +46,9 @@ public class Enemy : MonoBehaviour
     private void Move() {
         if (m_isJumping) {
             if (m_isFacingRight) {
-                m_enemy.velocity = new Vector2(m_speed * Time.deltaTime, 0);
+                m_enemy.velocity = new Vector2(m_speed, 0);
             } else {
-                m_enemy.velocity = new Vector2(-(m_speed * Time.deltaTime), 0);
+                m_enemy.velocity = new Vector2(-(m_speed), 0);
             }   
         } else {
             m_enemy.velocity = Vector2.zero;
@@ -63,7 +63,6 @@ public class Enemy : MonoBehaviour
             hit = Physics2D.Raycast(m_collisionCheck.transform.position, Vector3.left, 0.02f, m_whatIsWall);
         }
 
-        Debug.Log("hit: " + hit.rigidbody?.tag);
         if (hit && hit.rigidbody.tag == GlobalVariables.Tags.WALL) {
             Flip();
         }
