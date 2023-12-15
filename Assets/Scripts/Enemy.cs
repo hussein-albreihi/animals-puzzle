@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
     public float m_speed = 1.3f;
 
     [Header ("Collision settings")]
-    public LayerMask m_whatIsPlayer;
     public LayerMask m_whatIsWall;
     public GameObject m_collisionCheck;
 
@@ -40,7 +39,6 @@ public class Enemy : MonoBehaviour
         Jump(0.3f, 0.0f);
         Move();
         CheckForWall();
-        CheckForPlayer();
     }
 
     private void Move() {
@@ -48,7 +46,7 @@ public class Enemy : MonoBehaviour
             if (m_isFacingRight) {
                 m_enemy.velocity = new Vector2(m_speed, 0);
             } else {
-                m_enemy.velocity = new Vector2(-(m_speed), 0);
+                m_enemy.velocity = new Vector2(-m_speed, 0);
             }   
         } else {
             m_enemy.velocity = Vector2.zero;
@@ -65,21 +63,6 @@ public class Enemy : MonoBehaviour
 
         if (hit && hit.rigidbody.tag == GlobalVariables.Tags.WALL) {
             Flip();
-        }
-    }
-
-    private void CheckForPlayer() {
-        RaycastHit2D hit;
-
-        if (m_isFacingRight) {
-            hit = Physics2D.Raycast(m_collisionCheck.transform.position, Vector3.right, 0.02f, m_whatIsPlayer);
-        } else {
-            hit = Physics2D.Raycast(m_collisionCheck.transform.position, Vector3.left, 0.02f, m_whatIsPlayer);
-        }
-        
-        if (hit && hit.rigidbody.tag == GlobalVariables.Tags.PLAYER) {
-            PlayerControls playerControls = hit.rigidbody.gameObject.GetComponent<PlayerControls>();
-            playerControls.PlayerHit();
         }
     }
 
@@ -131,5 +114,12 @@ public class Enemy : MonoBehaviour
         }
 
         m_isFacingRight = !m_isFacingRight;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == GlobalVariables.Tags.PLAYER) {
+            other.gameObject.GetComponent<PlayerControls>().PlayerHit();
+        }
     }
 }

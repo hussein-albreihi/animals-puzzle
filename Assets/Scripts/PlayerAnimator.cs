@@ -54,13 +54,11 @@ public class PlayerAnimator : MonoBehaviour
         else if (angleDegrees < 125 && angleDegrees >= 45) {
             // Moving up
             m_direction = (int) Direction.UP;
-            Debug.Log("UP: " + (angleDegrees < 125 && angleDegrees >= 45));
             return;
         }
         else if (angleDegrees >= 125 && angleDegrees < 225) {
             // Moving left
             m_direction = (int) Direction.LEFT;
-            Debug.Log("LEFT: " + (angleDegrees < 225 && angleDegrees >= 125));
             return;
         }
         else if (angleDegrees >= 225 && angleDegrees <= 315) {

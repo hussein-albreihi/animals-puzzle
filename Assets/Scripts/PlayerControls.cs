@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
+    [Header ("Ads handler")]
+    public AdsHandler m_adsHandler;
+
     [Header ("Game settings")]
     public Rigidbody2D m_player;
     public GameManager m_manager;
@@ -107,5 +110,7 @@ public class PlayerControls : MonoBehaviour
 
     public void PlayerHit() {
         Debug.LogError("Player hit logic not implemented");
+        m_adsHandler.LoadInterstitialAd();
+        m_adsHandler.ShowInterstitialAd();
     }
 }
