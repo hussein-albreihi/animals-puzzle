@@ -23,7 +23,7 @@ public class Spikes : MonoBehaviour
     private bool m_spikesActive = false;
 
     private float m_spikesTimer = 0f;
-
+    private bool m_disableCollision = false;
 
     // Start is called before the first frame update
     void Start()
@@ -66,14 +66,17 @@ public class Spikes : MonoBehaviour
     }
 
     private void CheckCollision() {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, m_raycastRadius, Vector2.zero, m_whatIsPlayer);
+        if (!m_disableCollision) {
+            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, m_raycastRadius, Vector2.zero, m_whatIsPlayer);
 
-        if (hits.Length > 0) {
-            foreach (RaycastHit2D hit in hits) {
-                if (hit.rigidbody.tag == GlobalVariables.Tags.PLAYER && m_spikesActive) {
-                    m_player.PlayerHit();
-                }
-            } 
+            if (hits.Length > 0) {
+                foreach (RaycastHit2D hit in hits) {
+                    if (hit.rigidbody.tag == GlobalVariables.Tags.PLAYER && m_spikesActive) {
+                        m_player.PlayerHit();
+                        m_disableCollision = true;
+                    }
+                } 
+            }
         }
     }
 }

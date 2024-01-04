@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header ("Ads handler")]
+    public AdManager m_adManager;
+
     [Header ("Sound effects")]
     public AudioSource m_musicAudioSource;
     public AudioSource m_pickupSFX;
@@ -18,6 +21,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (m_adManager == null) {
+            m_adManager = FindObjectOfType<AdManager>();
+        }
+        
         m_pickUps = GameObject.FindGameObjectsWithTag(PICKUP_TAG);
     }
 
@@ -52,5 +59,10 @@ public class GameManager : MonoBehaviour
 
     public void PlayMusic() {
         m_musicAudioSource.Play();
+    }
+
+    public void DisplayAd() {
+        m_adManager.LoadAd();
+        m_adManager.ShowAd();
     }
 }

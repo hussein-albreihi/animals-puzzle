@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &37768826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 37768827}
+  m_Layer: 0
+  m_Name: AdStatus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &37768827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37768826}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 214.9004, y: 72.14606, z: 0.016888916}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &65377767
 GameObject:
   m_ObjectHideFlags: 0
@@ -5211,7 +5242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4be855cafe45247d5953cc2597276c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_adsHandler: {fileID: 897260169}
+  m_adManager: {fileID: 0}
   m_player: {fileID: 0}
   m_manager: {fileID: 0}
   m_whatIsCollideable:
@@ -25953,9 +25984,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 897260167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1575a809926941f1b48fe45c0f59157, type: 3}
+  m_Script: {fileID: 11500000, guid: 34b77bcdbd310a149a0f813a09218eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AdLoadedStatus: {fileID: 37768826}
 --- !u!1 &933377550
 GameObject:
   m_ObjectHideFlags: 0
@@ -33439,6 +33471,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2141547174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2141547177}
+  - component: {fileID: 2141547176}
+  - component: {fileID: 2141547175}
+  m_Layer: 0
+  m_Name: GoogleAdsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2141547175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141547174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149440ca5ae3da148981e1c0fb644eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _privacyButton: {fileID: 0}
+  _errorPopup: {fileID: 0}
+  _errorText: {fileID: 0}
+--- !u!114 &2141547176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141547174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d1c0968ba78ac43881a060bf3dcbdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _consentController: {fileID: 2141547175}
+--- !u!4 &2141547177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141547174}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 214.9004, y: 72.14606, z: 0.016888916}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2894292110669026603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33667,3 +33760,5 @@ SceneRoots:
   - {fileID: 636892227}
   - {fileID: 1460133393}
   - {fileID: 897260168}
+  - {fileID: 2141547177}
+  - {fileID: 37768827}

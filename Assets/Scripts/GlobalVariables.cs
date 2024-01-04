@@ -8,4 +8,7 @@ public static class GlobalVariables
         public const string PLAYER = "Player";
         public const string PICKUP = "Pickup";
     }
+
+    public static bool m_canPlayAd = false;
+    public static bool m_playLongAd = false;
 }

@@ -6,9 +6,6 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-    [Header ("Ads handler")]
-    public AdsHandler m_adsHandler;
-
     [Header ("Game settings")]
     public Rigidbody2D m_player;
     public GameManager m_manager;
@@ -28,6 +25,8 @@ public class PlayerControls : MonoBehaviour
 
     private bool m_isJumping = false;
     private float m_jumpDelayTimer = 0f;
+    private bool m_playerLost = false;
+    private bool m_displayAd = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,10 +47,17 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_jumpDelayTimer += Time.deltaTime;
-        Jump(0.3f, 0.0f);
-        MovePlayer();
-        CheckCollision();
+        if (!m_playerLost) {
+            m_jumpDelayTimer += Time.deltaTime;
+            Jump(0.3f, 0.0f);
+            MovePlayer();
+            CheckCollision();
+        }
+
+        if (m_displayAd) {
+            m_manager.DisplayAd();
+            m_displayAd = false;
+        }
     }
 
     private void MovePlayer() {
@@ -109,8 +115,9 @@ public class PlayerControls : MonoBehaviour
     }
 
     public void PlayerHit() {
-        Debug.LogError("Player hit logic not implemented");
-        m_adsHandler.LoadInterstitialAd();
-        m_adsHandler.ShowInterstitialAd();
+        // Debug.LogError("Player hit logic not implemented");
+        Debug.Log("Display Ad");
+        m_playerLost = true;
+        m_displayAd = true;
     }
 }
